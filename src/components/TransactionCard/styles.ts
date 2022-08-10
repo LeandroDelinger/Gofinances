@@ -1,9 +1,9 @@
-import styled from "styled-components/native";
 import { Feather } from "@expo/vector-icons";
-import { RFValue, RFPercentage } from "react-native-responsive-fontsize";
+import { RFValue } from "react-native-responsive-fontsize";
+import styled from "styled-components/native";
 
 interface TransactionType {
-  type: "positive" | "negative";
+  type: "up" | "down";
 }
 
 export const Container = styled.View`
@@ -24,7 +24,7 @@ export const Amount = styled.Text<TransactionType>`
   font-size: ${RFValue(20)}px;
   font-family: ${({ theme }) => theme.fonts.regular};
   color: ${({ theme, type }) =>
-    type === "positive" ? theme.colors.success : theme.colors.attention};
+    type === "up" ? theme.colors.success : theme.colors.attention};
 `;
 
 export const Footer = styled.View`

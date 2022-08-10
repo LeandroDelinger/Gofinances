@@ -10,6 +10,9 @@ import {
 } from "@expo-google-fonts/poppins";
 
 import { NavigationContainer } from "@react-navigation/native";
+import "intl";
+import "intl/locale-data/jsonp/pt-BR";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { AppRoutes } from "./src/app.routes";
 import theme from "./src/global/styles/theme";
 
@@ -24,10 +27,12 @@ export default function App() {
     return <AppLoading />;
   }
   return (
-    <ThemeProvider theme={theme}>
-      <NavigationContainer>
-        <AppRoutes />
-      </NavigationContainer>
-    </ThemeProvider>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <ThemeProvider theme={theme}>
+        <NavigationContainer>
+          <AppRoutes />
+        </NavigationContainer>
+      </ThemeProvider>
+    </GestureHandlerRootView>
   );
 }

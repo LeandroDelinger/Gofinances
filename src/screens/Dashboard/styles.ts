@@ -1,9 +1,12 @@
-import styled from "styled-components/native";
-import { FlatList } from "react-native";
 import { Feather } from "@expo/vector-icons";
-import { RFValue, RFPercentage } from "react-native-responsive-fontsize";
-import { getStatusBarHeight } from "react-native-iphone-x-helper";
-import { getBottomSpace } from "react-native-iphone-x-helper";
+import { FlatList, FlatListProps } from "react-native";
+import { BorderlessButton } from "react-native-gesture-handler";
+import {
+  getBottomSpace,
+  getStatusBarHeight,
+} from "react-native-iphone-x-helper";
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
+import styled from "styled-components/native";
 import { DataListProps } from ".";
 
 export const Container = styled.View`
@@ -93,3 +96,5 @@ export const TransactionList = styled(
   showsVerticalScrollIndicator: false,
   contentContainerStyle: { paddingBottom: getBottomSpace() },
 })``;
+
+export const LogoutButton = styled(BorderlessButton)``;
