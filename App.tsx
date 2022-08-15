@@ -8,13 +8,14 @@ import {
   Poppins_700Bold,
   useFonts,
 } from "@expo-google-fonts/poppins";
+import { StatusBar } from "react-native";
 
 import { NavigationContainer } from "@react-navigation/native";
 import "intl";
 import "intl/locale-data/jsonp/pt-BR";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { AppRoutes } from "./src/app.routes";
 import theme from "./src/global/styles/theme";
+import { AppRoutes } from "./src/routes/app.routes";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -30,6 +31,7 @@ export default function App() {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <ThemeProvider theme={theme}>
         <NavigationContainer>
+          <StatusBar barStyle="light-content" />
           <AppRoutes />
         </NavigationContainer>
       </ThemeProvider>
