@@ -16,6 +16,8 @@ import "intl/locale-data/jsonp/pt-BR";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import theme from "./src/global/styles/theme";
 import { AppRoutes } from "./src/routes/app.routes";
+import { Signin } from "./src/screens/Signin";
+import { AuthProvider } from "./src/hooks/auth";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -32,7 +34,9 @@ export default function App() {
       <ThemeProvider theme={theme}>
         <NavigationContainer>
           <StatusBar barStyle="light-content" />
-          <AppRoutes />
+          <AuthProvider>
+            <Signin />
+          </AuthProvider>
         </NavigationContainer>
       </ThemeProvider>
     </GestureHandlerRootView>
