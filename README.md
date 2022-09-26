@@ -1,6 +1,6 @@
 
 
-# <h1 align="center">![Go Finances](.github/logo.svg)</h1>
+# <h1 align="center">Go Finances</h1>
 
 GoFinances é uma aplicação Mobile desenvolvida durante a trilha de React Native na Rocketseat, com o objetivo de te auxiliar a controlar suas finanças.
 
